@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Azure Vision</title>
+</head>
+<body>
+  <h1>Azure Vision</h1>
+  <div id="json-output"></div>
+  <div id="json-output2"></div>
+  <div id="json-output3"></div>
+
+  <script>
+    // Need to fix this
+    // Need node server/live server to run this once the json file is in place.  
+    // Can't run from file system for security reasons.
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText); 
+          var response = JSON.parse(xhttp.responseText);
+
+          document.getElementById("json-output2").innerHTML = '<pre>' + this.response + '<pre>'; // Dump contents of JSON file to browser page.
+
+          //document.getElementById("json-output2").innerHTML = JSON.stringify(this.response); // This add a bunch of escape characters to output.
+          //document.getElementById("json-output3").innerHTML = JSON.stringify(this.response, null, 2);
+
+          console.log(response); // Display object
+          console.log(response.categories); // Display part of object
+          console.log(response.description); // Display part of object
+
+          var image = response.description.tags;
+          console.log(image.length); 
+
+          var output = '';
+
+          for(var i = 0; i < image.length; i++) {
+            output += '<li>' + image[i].description + '</li>'; // Need to fix this and get nested objects
+          }
+          document.getElementById('json-output').innerHTML = output;
+        }
+    };
+    xhttp.open("GET", "images.json", true);
+    xhttp.send();
+  </script>
+
+</body>
+</html>

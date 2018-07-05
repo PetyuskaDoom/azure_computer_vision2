@@ -1,0 +1,15 @@
+{
+  "name": "analyse_image_azure",
+  "version": "1.0.0",
+  "description": "Image analysis utility using Azure Vision API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Pat Flynn",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.17.5",
+    "request": "^2.87.0"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "categories": [
+    {
+      "name": "outdoor_water",
+      "score": 0.9921875,
+      "detail": {
+        "landmarks": []
+      }
+    }
+  ],
+  "description": {
+    "tags": [
+      "nature",
+      "water",
+      "waterfall",
+      "outdoor",
+      "rock",
+      "mountain",
+      "rocky",
+      "grass",
+      "hill",
+      "covered",
+      "hillside",
+      "standing",
+      "side",
+      "group",
+      "walking",
+      "white",
+      "man",
+      "large",
+      "snow",
+      "grazing",
+      "forest",
+      "slope",
+      "herd",
+      "river",
+      "giraffe",
+      "field"
+    ],
+    "captions": [
+      {
+        "text": "a large waterfall over a rocky cliff",
+        "confidence": 0.916458423253597
+      }
+    ]
+  },
+  "color": {
+    "dominantColorForeground": "Grey",
+    "dominantColorBackground": "Green",
+    "dominantColors": [
+      "Grey",
+      "Green"
+    ],
+    "accentColor": "4D5E2F",
+    "isBwImg": false
+  },
+  "requestId": "79e4034c-cbdb-46b8-bd85-134bce17309c",
+  "metadata": {
+    "height": 959,
+    "width": 1280,
+    "format": "Jpeg"
+  }
+}

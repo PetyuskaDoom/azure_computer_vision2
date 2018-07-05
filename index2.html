@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Azure Vision</title>
+  <style>
+    #json-output {
+      margin: 0;
+      padding: 0;
+    }
+    #json-output li {
+      color:brown;
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <ul id="json-output"></ul>
+
+  <script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          
+          var response = JSON.parse(xhttp.responseText);
+          var people = response.people;
+          var output = '';
+
+          for(var i = 0; i < people.length; i++) {
+            output += '<li>' + people[i].name + '</li>';
+          }
+          document.getElementById('json-output').innerHTML = output;
+        }
+    };
+    xhttp.open("GET", "people.json", true);
+    xhttp.send();
+  </script>
+</body>
+</html>
